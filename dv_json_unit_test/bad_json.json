@@ -1,0 +1,51 @@
+[
+    {
+    "module": "CTA",
+    "rulesEngineEnabled": true,
+    "rulesEngineTriggered": false,
+    "siteName": "North California Community Hospital"
+    },
+    {
+        "module": "MR",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": false,
+        "siteName": "Southern California Community Hospital"
+    },
+    {
+        "module": "MR",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": false,
+        "siteName": "Southern California Community Hospital"
+    },
+    {
+        "module": "MR",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": false
+    },
+    {
+        "module": "MR",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": false,
+        "siteName": "Good record with unknown property Community Hospital",
+        "unknown_property": "I don't know what this is we should just skip it"
+    },
+    {
+        "module": "xCTA",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": false,
+        "siteName": "North California Community Hospital"
+    },
+    {
+        "module": "ASPECTS",
+        "rulesEngineEnabled": true,
+        "rulesEngineTriggered": true,
+        "siteName": "EASTERN California Community Hospital"
+    },
+	   {
+        "module": "xASPECTS",
+        "rulesEngineEnabled": true,
+        "XXrulesEngineTriggered": true,
+        "siteName": "EASTERN California Community Hospital"
+    }
+]
+]
