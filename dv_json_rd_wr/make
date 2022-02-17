@@ -1,0 +1,7 @@
+
+dv_json_rd_wr: dv_json_rd_wr.cpp        # module for twiddling the frobs
+        cc -c -g dv_json_rd_wr.cpp -Iinclude/
+
+
+curl https://obscura.zendesk.com/api/v2/users/me.json \-v -u dom.vag@gmail.com:password
+

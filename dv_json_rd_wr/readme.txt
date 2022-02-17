@@ -1,0 +1,35 @@
+This directory(dv_rd_wr_json), contains source and build insturctions to create dv_rd_wr_json.exe
+dist:               directory for 3rd party json packackage, used in the json file processing.
+include:            include dir for source code.
+docs:               Document for Json files used in testing.
+readme.txt:         This readme file`
+cjson_mngr.cpp:     CPP Source for cjson file mngr object, handles all json parsing and io. 
+dv_json_rd_wr.cpp:  CPP source used for feeding files into cjson_mngr and controlling options
+dv_rd_wr_json.exe:  compiled executeable.
+MY_REPORT.TXT       default file name for report file ouput, 
+JSON_PROCESS_LOG.txt    Log file for created everytime dv_rd_wr_json.exe is run. Details the processing of the json file input and report file output.
+--------------------------------
+how to build.
+g++ dv_json_rd_wr.cpp  cjson_mngr.cpp dist/jsoncpp.cpp -Iinclude/ -odv_rd_wr_json
+--------------------------------
+how to execute:
+./dv_rd_wr_json.exe docs/input.json  
+        // input file is  docs/input.json, output: is def ault file MY_REPORT.TXT
+
+ ./dv_rd_wr_json.exe docs/input01.json new_report_name.txt
+        // input file is  docs/input01.json, output: is default file new_report_name.txt  
+--------------------------------
+Overview:
+    The application takes in json input file upon start (see how to execute) it will attempt to process the json file and create a report file using the format 
+    in docs/readme.md.
+    The application will create a log file (JSON_PROCESS_LOG) which will detail the json file parsing and report file.
+    The application will only process fully qualified entries in the given log files.
+    The manditory 4  entries:
+        1  A known module name ("CTA", "MR", "CTP", "ICH", "ASPECTS")
+        2: A boolean value for rulesEngineEnabled (true, false) 	
+        3: A boolean value for rulesEngineTriggered (true, false)
+        4: A non zero length string value for siteName i.e("Southern California Community Hospital")
+
+    Unknown json entries are ignored.
+    Valid json entries are added to the report vector.
+    The objects in the report vector is then used to create the final output report.

@@ -1,0 +1,8 @@
+|    Module     | Rules engine enabled   |  Rules engine triggered    |                   Expected message                     |  Expected Loud tone    |
+|:------------: |:---------------------: |:-------------------------: |:-----------------------------------------------------: |:---------------------: |
+|     CTA       |         true           |           false            |Negative CT Angiography result at North California Community Hospital |         false          |
+|      MR       |         true           |           false            | Negative MR at Southern California Community Hospital  |         false          |
+|     CTA       |         true           |           true             |Positive CT Angiography result at EastWest California Community Hospital |         true           |
+|     CTP       |         true           |           true             |Positive CT Perfusion result at EastWest California Community Hospital |         true           |
+|     ICH       |         true           |           true             |Positive hemorrhage module result at EastWest California Community Hospital |         true           |
+|   ASPECTS     |         true           |           true             |Low ASPECTS score at EASTERN California Community Hospital |         true           |

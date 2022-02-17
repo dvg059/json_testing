@@ -1,0 +1,8 @@
+process_json: dv_json_rd_wr.o dv_json_rules.o
+	g++ dv_json_rd_wr.cpp  dv_json_rules.cpp dist/jsoncpp.cpp -Iinclude/ -oprocess_json
+
+dv_json_rd_wr.o: dv_json_rd_wr.cpp
+	g++ -c dv_json_rd_wr.cpp
+
+dv_json_rules.o: dv_json_rules.cpp
+	g++ -c dv_json_rules.cpp
