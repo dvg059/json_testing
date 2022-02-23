@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <algorithm>
 #include "include\json_mngr.h"
-#include "include\json\json.h"
+#include "json.h"
 #include "include\LOG.H"
 
 using namespace std;
@@ -164,7 +164,7 @@ bool CJsonMngr::validate_json_rec(rules_rec rec)
         return false;
     }
 
-    for (int i = 0; i < _vec_modules.size(); i++)  {   
+    for (unsigned i = 0; i < _vec_modules.size(); i++)  {   
         if (rec.module == _vec_modules[i]) {
             return true;
         }
@@ -217,7 +217,7 @@ int CJsonMngr::validate_json_file(string fname, rules_rec &rec)
         vector<string> vec_rule_names = {"module", "rulesEngineEnabled", "rulesEngineTriggered", "siteName"};
         printProcessMsg(root.size(), "Root ");
 
-        for (int ii =0; ii < root.size(); ++ii) {
+        for (unsigned ii =0; ii < root.size(); ++ii) {
             Json::Value::Members propNames = root[ii].getMemberNames();
 
 
@@ -229,7 +229,7 @@ int CJsonMngr::validate_json_file(string fname, rules_rec &rec)
 
 
             int found_rule_names = vec_rule_names.size();
-            for (int k =0; k < propNames.size(); ++k ) {
+            for (unsigned k =0; k < propNames.size(); ++k ) {
                 //printProcessMsg(propNames[k], "property name");
                 if (std::find(vec_rule_names.begin(), vec_rule_names.end(), propNames[k]) != vec_rule_names.end()) {
                         // The property name is found added remove it from the list.
@@ -307,18 +307,18 @@ bool CJsonMngr::do_report(string report_name)
     int rules_eng_trig_width = 27;
     int exptd_msg_width = 55;
     int exptd_tone_width = 23;
-    int num_flds = 5;
+  //  int num_flds = 5;
     std::string sep = " |" ;
 
     vector<string> headers = {"Module","Rules engine enabled","Rules engine triggered","Expected message","Expected Loud tone"};
     vector<int> headerw = {module_width, rules_eng_width, rules_eng_trig_width, exptd_msg_width, exptd_tone_width}; // column width for each field
 
-    const int total_width = module_width + rules_eng_width + rules_eng_trig_width + (sep.size() * num_flds) + exptd_msg_width + exptd_tone_width;
+    //const int total_width = module_width + rules_eng_width + rules_eng_trig_width + (sep.size() * num_flds) + exptd_msg_width + exptd_tone_width;
     //const string line = sep + std::string( total_width-1, '-' ) + '|' 
-    int cur_pos =0;
+    //int cur_pos =0;
     // Write column headings
     cout << "|";
-    for (int i=0; i<headers.size(); ++i)
+    for (unsigned i=0; i<headers.size(); ++i)
     {
         string hdr = center_string(headerw[i], headers[i]);
         cout << hdr << sep;
@@ -327,7 +327,7 @@ bool CJsonMngr::do_report(string report_name)
 
     // Write field  sepeartors
     cout << "|";
-    for (int i=0; i<headerw.size(); ++i)
+    for (unsigned i=0; i<headerw.size(); ++i)
     {
         string feild_sp = ":" + string( headerw[i]-2, '-' ) + ':' ;
         cout << feild_sp << sep;
@@ -335,7 +335,7 @@ bool CJsonMngr::do_report(string report_name)
     cout << "\n";
 
     // Write data fields;
-    for (int i= 0; i <_report_rec.size(); i++)
+    for (unsigned i= 0; i <_report_rec.size(); i++)
     {
         cout << "|";
         string mod_data =  center_string(module_width, _report_rec[i].module);
