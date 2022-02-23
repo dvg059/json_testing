@@ -4,9 +4,9 @@
 
 #include <iostream>
 #include <fstream>
-#include "..\dv_json_rd_wr\include\json_mngr.h"
-#include "..\dv_json_rd_wr\include\json\json.h"
-#include "..\dv_json_rd_wr\include\LOG.H"
+#include "json_mngr.h"
+#include "json.h"
+#include "LOG.H"
 #include <string>
 #include <assert.h>
 
@@ -83,7 +83,7 @@ bool test_validate_json_rec()
 
 	// Test that all known module names are recognized.
 	cout << "test_validate_json_rec: START test known module names" << endl; 
-    for (int i = 0; i < modules.size(); i++)  {   
+    for (unsigned i = 0; i < modules.size(); i++)  {   
         rec.module = modules[i];
 		rec.rulesEngineEnabled = true;
 		rec.rulesEngineTriggered =  true;
@@ -116,7 +116,7 @@ bool test_json_mngr_create()
 	bool engine_enabled[]={true,false,true,false, false,true};		// engine enabled states
 	bool engine_triggered[]={false,false,true,false,true,true};		// engine triggered states
 
-	for (int i=0; i < 6; ++i)
+	for (unsigned i=0; i < 6; ++i)
 	{
 //		cout << "expected_key: " << expected_keys[i] << endl;
 
@@ -161,7 +161,7 @@ bool  test_json_mngr_map()
 
 	vector<bool> tones =   {false,   false,   false,  true};
 
-    for (int i = 0; i < keys.size(); i++)  {   
+    for (unsigned i = 0; i < keys.size(); i++)  {   
 		// load the record for the given key
 		jsonMngr.get_rules_rec(keys[i], rec );
 
