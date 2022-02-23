@@ -5,9 +5,9 @@
 #include <fstream>
 #include <string>
 
-#include "include\json_mngr.h"
-#include "include\json\json.h"
-#include "include\LOG.H"
+#include "json_mngr.h"
+#include "json.h"
+#include "LOG.H"
 
 using namespace std;
 
