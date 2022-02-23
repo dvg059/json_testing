@@ -1,5 +1,5 @@
 This directory(dv_rd_wr_json), contains source and build insturctions to create dv_rd_wr_json.exe
-dist:               directory for 3rd party json packackage, used in the json file processing.
+json:               directory for 3rd party json packackage, used in the json file processing.
 include:            include dir for source code.
 docs:               Document for Json files used in testing.
 readme.txt:         This readme file`
@@ -10,7 +10,12 @@ MY_REPORT.TXT       default file name for report file ouput,
 JSON_PROCESS_LOG.txt    Log file for created everytime dv_rd_wr_json.exe is run. Details the processing of the json file input and report file output.
 --------------------------------
 how to build.
+MakeFile: make -f MakeFile
+-creates dv_jsone_rd_wr.exe
 g++ dv_json_rd_wr.cpp  cjson_mngr.cpp dist/jsoncpp.cpp -Iinclude/ -odv_rd_wr_json
+---------------------------------
+
+
 --------------------------------
 Feedback 
 
