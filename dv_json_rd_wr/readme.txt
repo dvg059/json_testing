@@ -12,6 +12,15 @@ JSON_PROCESS_LOG.txt    Log file for created everytime dv_rd_wr_json.exe is run.
 how to build.
 g++ dv_json_rd_wr.cpp  cjson_mngr.cpp dist/jsoncpp.cpp -Iinclude/ -odv_rd_wr_json
 --------------------------------
+Feedback 
+
+1: He didn’t create any tool chain to build this application.  This is different from the requirement, and he didn’t explain why. 
+2: The organizing of the code is misleading, third party shouldn’t be in the ‘dist’ folder. 
+3: The code itself is not clear. For example, no sufficient comments, 
+
+4: mixed using of the naming conventions (snake case and camel case). 
+5: The solution is not optimized, there are lots of hard coded constants without explanation.
+
 how to execute:
 ./dv_rd_wr_json.exe docs/input.json  
         // input file is  docs/input.json, output: is def ault file MY_REPORT.TXT
