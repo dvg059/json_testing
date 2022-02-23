@@ -1,8 +1,21 @@
-process_json: dv_json_rd_wr.o dv_json_rules.o
-	g++ dv_json_rd_wr.cpp  dv_json_rules.cpp dist/jsoncpp.cpp -Iinclude/ -oprocess_json
+#
+# A very simple makefile
+#
 
-dv_json_rd_wr.o: dv_json_rd_wr.cpp
-	g++ -c dv_json_rd_wr.cpp
+# The default C compiler
+CC = g++
 
-dv_json_rules.o: dv_json_rules.cpp
-	g++ -c dv_json_rules.cpp
+# The CFLAGS variable sets compile flags for gcc:
+#  -g          compile with debug information
+#  -Wall       give verbose compiler warnings
+#  -O0         do not optimize generated code
+#  -std=gnu99  use the GNU99 standard language definition
+CFLAGS = -g -Wall -O0 -std=c++11 -Iinclude -Ijson/json -Ijson 
+
+dv_json_rd_wr: cjson_mngr.cpp dv_json_rd_wr.cpp json/jsoncpp.cpp
+	$(CC) $(CFLAGS) -o dv_json_rd_wr dv_json_rd_wr.cpp cjson_mngr.cpp json/jsoncpp.cpp
+
+.PHONY: clean
+
+clean:
+	rm -f hello *.o
