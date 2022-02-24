@@ -8,11 +8,20 @@ dv_json_rd_wr.cpp:  CPP source used for feeding files into cjson_mngr and contro
 dv_rd_wr_json.exe:  compiled executeable.
 MY_REPORT.TXT       default file name for report file ouput, 
 JSON_PROCESS_LOG.txt    Log file for created everytime dv_rd_wr_json.exe is run. Details the processing of the json file input and report file output.
+
 --------------------------------
 how to build.
-MakeFile: make -f MakeFile
--creates dv_jsone_rd_wr.exe
-g++ dv_json_rd_wr.cpp  cjson_mngr.cpp dist/jsoncpp.cpp -Iinclude/ -odv_rd_wr_json
+get code from git:
+    - git commit -m "removing utest_json_rd_wr.exe"
+build exe:
+    - MakeFile: make -f MakeFile
+    -creates dv_json_rd_wr.exe
+
+Sample Execute:
+    - ./dv_json_rd_wr <JSON file to parse>,  <PROCESS LOG>
+    - ./dv_json_rd_wr.exe docs/input01.json MYLOGFILE
+    - ./dv_json_rd_wr.exe docs/input01.json
+
 ---------------------------------
 
 
