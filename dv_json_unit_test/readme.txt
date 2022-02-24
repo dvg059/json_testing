@@ -8,6 +8,15 @@ for example a module name of ASPECT with engineEnabled= true and engineTrigger =
 When that combination of mdoule name and variables is read in from a file, the application goes to the map and finds the approprate message for that key.
 The message is stored in vector that is then processed as part fo the report
 
+OVERVIEW SETUP:
+1: retrive code repository from GIT.
+    -   git clone  https://github.com/dvg059/json_testing.git
+2: Make the test applicaiton.
+    - make -f MakeFile, creates dv_json_unit_test.exe
+
+3: Execute applciation to create a test report (UNIT_TEST_LOG) 
+    - ./dv_json_unit_test.exe
+
 
 Test include:
 test_validate_json_rec(): 
