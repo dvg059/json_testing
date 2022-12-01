@@ -57,3 +57,8 @@ Overview:
     Unknown json entries are ignored.
     Valid json entries are added to the report vector.
     The objects in the report vector is then used to create the final output report.
+--------------------------------
+History:
+ 12/02/22: adding history section
+--------------------------------
+
