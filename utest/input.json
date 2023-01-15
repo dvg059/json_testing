@@ -1,0 +1,14 @@
+[
+    {
+    "module": "CTA",
+    "rulesEngineEnabled": true,
+    "rulesEngineTriggered": false,
+    "siteName": "North California Community Hospital"
+    },
+    {
+    "module": "MR",
+    "rulesEngineEnabled": true,
+    "rulesEngineTriggered": false,
+    "siteName": "Southern California Community Hospital"
+    }
+]
