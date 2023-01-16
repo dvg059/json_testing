@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "json.h"
+#include "../json/json.h"
 
 using namespace std;
 

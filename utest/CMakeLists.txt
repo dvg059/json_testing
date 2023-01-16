@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 
-add_executable(json_unittest json_unit_test.cpp)
+add_executable(json_unittest json_unit_test.cpp ../src/cjson_mngr.cpp ../json/jsoncpp.cpp)
 
 target_link_libraries(json_unittest GTest::gtest_main)
 
